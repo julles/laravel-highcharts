@@ -1,0 +1,20 @@
+{
+    "name": "muhamadrezaar/highcharts",
+    "description": "Laravel Highcarts Packages",
+    "type": "library",
+    "license": "MIT",
+    "keywords" : ["laravel" , "highcharts"],
+    "authors": [
+        {
+            "name": "Muhamad Reza Abdul Rohim",
+            "email": "reza.wikrama3@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Oblagio\\Instagram\\": "src/"
+        }
+    }
+}
