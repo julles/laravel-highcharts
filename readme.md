@@ -59,6 +59,9 @@ Versi Blade
 {!! Chart::display("id-highchartsnya", $charts) !!}
 
 ```
+Output :
+
+![alt tag](http://s17.postimg.org/uig89a9xr/chart.png)
 
 
 ## License
