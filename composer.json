@@ -14,7 +14,7 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "Oblagio\\Highcarts\\": "src/"
+            "Oblagio\\Highcharts\\": "src/"
         }
     }
 }
