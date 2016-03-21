@@ -1,4 +1,10 @@
 # Laravel 5 Highcharts Packages
+
+[![Total Downloads](https://poser.pugx.org/muhamadrezaar/highcharts/d/total.svg)](https://packagist.org/packages/muhamadrezaar/highcharts)
+[![Latest Stable Version](https://poser.pugx.org/muhamadrezaar/highcharts/v/stable.svg)](https://packagist.org/packages/muhamadrezaar/highcharts/v/stable.svg)
+[![License](https://poser.pugx.org/muhamadrezaar/highcharts/license.svg)](https://packagist.org/packages/muhamadrezaar/highcharts)
+
+
 Package Highcharts untuk Laravel 5
 
 ### Installasi
