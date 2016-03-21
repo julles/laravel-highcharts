@@ -46,7 +46,7 @@ class Highcharts
 		$array = json_encode($array);
 
 		$export = '
-			<script>
+			<script type="text/javascript">
 				$(document).ready(function(){
 					$("#'.$id.'").exportChart('.$array.');
 				});
@@ -56,23 +56,21 @@ class Highcharts
 		return $export;
 	}
 
-	public function display($id = "" , $array = [] , $options = ['jquery.js' => true , 'highcharts.js' => true,'exporting.js'=> true])
-
+	public function display($id = "" , $array = [] , $options = ['jquery.js' => true , 'highcharts.js' => true,'exporting.js'=> true,'format' => 'chart'])
 	{
 		// belon sempurna display nya brayse
 		
 		$array = json_encode($array);
 
-		$jquery = $options['jquery.js'];
+		$jquery = !isset($options['jquery.js']) ? $options['jquery.js'] = true : $options['jquery.js'];
 
 		$installJquery = $jquery == true ? $this->installJquery() : '';
 
-		$highcharts = $options['highcharts.js'];
+		$highcharts = !isset($options['highcharts.js']) ? $options['highcharts.js'] = true : $options['highcharts.js'];
 
 		$installHighchart = $highcharts == true ? $this->installHighchart() : '';
 
-
-		$exporting = $options['exporting.js'];
+		$exporting = !isset($options['exporting.js']) ? $options['exporting.js'] = true : $options['exporting.js'];
 
 		$installExporting = $exporting == true ? $this->installExport() : '';
 
@@ -88,8 +86,17 @@ class Highcharts
 			
 			$(document).ready(function(){
 
-				$("#'.$id.'").highcharts('.$array.')
+				$("#'.$id.'").highcharts('.$array.');
 				
+				format = "'.$options['format'].'";
+
+				if(format == "svg")
+				{
+					var chart = $("#'.$id.'").highcharts(),
+		            svg = chart.getSVG();
+					$("#'.$id.'").text(svg);
+			    }
+
 			});
 
 			</script>
@@ -98,4 +105,6 @@ class Highcharts
 
 		return $view;
 	}
+
+
 }
