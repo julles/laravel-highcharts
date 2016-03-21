@@ -26,16 +26,37 @@ class Highcharts
 	public function installHighchart()
 
 	{
-		return '<script src="http://code.highcharts.com/highcharts.js"></script>;';
+		return '<script src="http://code.highcharts.com/highcharts.js"></script>';
+	}
+
+	public function installExport()
+	
+	{
+		return '<script src="http://code.highcharts.com/modules/exporting.js"></script>';
 	}
 
 	public function install()
 
 	{
-		return $this->installJquery().$this->installHighchart();
+		return $this->installJquery().$this->installHighchart().$this->installExport();
 	}
 
-	public function display($id = "" , $array = [] , $options = ['jquery.js' => true , 'highcharts.js' => true])
+	public function export($id,$array = [])
+	{
+		$array = json_encode($array);
+
+		$export = '
+			<script>
+				$(document).ready(function(){
+					$("#'.$id.'").exportChart('.$array.');
+				});
+			</script>
+		';
+
+		return $export;
+	}
+
+	public function display($id = "" , $array = [] , $options = ['jquery.js' => true , 'highcharts.js' => true,'exporting.js'=> true])
 
 	{
 		// belon sempurna display nya brayse
@@ -50,9 +71,16 @@ class Highcharts
 
 		$installHighchart = $highcharts == true ? $this->installHighchart() : '';
 
+
+		$exporting = $options['exporting.js'];
+
+		$installExporting = $exporting == true ? $this->installExport() : '';
+
 		$view = $installJquery;
 
 		$view .= $installHighchart;
+
+		$view .= $installExporting;
 
 		$view .= '
 
@@ -60,7 +88,7 @@ class Highcharts
 			
 			$(document).ready(function(){
 
-				$("#'.$id.'").highcharts('.$array.');
+				$("#'.$id.'").highcharts('.$array.')
 				
 			});
 
