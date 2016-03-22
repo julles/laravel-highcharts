@@ -88,21 +88,27 @@ class Highcharts
 
 				$("#'.$id.'").highcharts('.$array.');
 				
+				var chart = $("#'.$id.'").highcharts(),
+		        
+		        svg = chart.getSVG();
+				
 				format = "'.$options['format'].'";
 
 				if(format == "svg")
 				{
-					var chart = $("#'.$id.'").highcharts(),
-		            svg = chart.getSVG();
-					$("#'.$id.'").text(svg);
-			    }
+				    $("#'.$id.'").text(svg);
+		        }else if(format == "base64"){
+		        	base = "data:image/svg+xml;base64," + btoa(svg);
+		       		$("#'.$id.'").text(base);
+		        }
 
 			});
 
 			</script>
+			
 			<div id="'.$id.'" style="width:100%; height:400px;"></div>
-		';
 
+		';
 		return $view;
 	}
 
