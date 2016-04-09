@@ -3,40 +3,27 @@
 class Highcharts
 
 {
-	// public $install = [
-
-	// 	'install' => [
-	// 		'jquery' => true,
-	// 		'highcharts' => true,
-	// 	]
-	// ];
-	
 	public function hello()
-
 	{
 		return 'hello';
 	}
 
 	public function installJquery()
-
 	{
 		return '<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>';
 	}
 
 	public function installHighchart()
-
 	{
 		return '<script src="http://code.highcharts.com/highcharts.js"></script>';
 	}
 
 	public function installExport()
-	
 	{
 		return '<script src="http://code.highcharts.com/modules/exporting.js"></script>';
 	}
 
 	public function install()
-
 	{
 		return $this->installJquery().$this->installHighchart().$this->installExport();
 	}
@@ -58,8 +45,6 @@ class Highcharts
 
 	public function display($id = "" , $array = [] , $options = ['jquery.js' => true , 'highcharts.js' => true,'exporting.js'=> true,'format' => 'chart'])
 	{
-		// belon sempurna display nya brayse
-		
 		$array = json_encode($array);
 
 		$jquery = !isset($options['jquery.js']) ? $options['jquery.js'] = true : $options['jquery.js'];
