@@ -72,5 +72,5 @@ Output :
 
 ## License
 
-MIT
+https://reza.mit-license.org/
 
