@@ -10,17 +10,17 @@ class Highcharts
 
 	public function installJquery()
 	{
-		return '<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>';
+		return '<script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>';
 	}
 
 	public function installHighchart()
 	{
-		return '<script src="http://code.highcharts.com/highcharts.js"></script>';
+		return '<script src="//code.highcharts.com/highcharts.js"></script>';
 	}
 
 	public function installExport()
 	{
-		return '<script src="http://code.highcharts.com/modules/exporting.js"></script>';
+		return '<script src="//code.highcharts.com/modules/exporting.js"></script>';
 	}
 
 	public function install()
