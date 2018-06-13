@@ -1,25 +1,26 @@
-<?php namespace Oblagio\Highcharts;
+<?php namespace RezaAr\Highcharts;
 
 use Illuminate\Support\ServiceProvider;
-
-use Oblagio\Highcharts\Highcharts;
+use RezaAr\Highcharts\Highcharts;
 
 class Provider extends ServiceProvider
 {
-	
-	public function boot()
 
-	{
+    public function boot()
+    {
+    	$this->publishes([
+            __DIR__ . '/Config/highchart.php' => config_path('highchart.php'),
+        ], 'highchart_config');
+    }
 
-	}
+    public function register()
+    {
+    	$this->mergeConfigFrom(
+            __DIR__ . '/Config/highchart.php', 'highchart'
+        );
 
-	public function register()
-
-	{
-		$this->app->bind('register-highcharts' , function(){
-
-			return new Highcharts;
-
+        $this->app->bind('register-highcharts', function () {
+		    return new Highcharts;
 		});
-	}
+    }
 }

@@ -10,11 +10,21 @@
             "email": "reza.wikrama3@gmail.com"
         }
     ],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev-master",
     "require": {},
     "autoload": {
         "psr-4": {
-            "Oblagio\\Highcharts\\": "src/"
+            "RezaAr\\Highcharts\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "RezaAr\\Highcharts\\Provider"
+            ],
+            "aliases": {
+                "Chart": "RezaAr\\Highcharts\\Facade"
+            }
         }
     }
 }

@@ -1,4 +1,4 @@
-<?php namespace Oblagio\Highcharts;
+<?php namespace RezaAr\Highcharts;
 
 use Illuminate\Support\Facades\Facade as FacadeClass;
 
