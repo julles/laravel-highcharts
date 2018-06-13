@@ -38,20 +38,6 @@ In Controller or Other Class
 ```sh
 
 <?php
-$legend = [
-        'layout'        => 'vertikal',
-        'align'         => 'right',
-        'verticalAlign' => 'middle',
-    ];
-    
-    $series = [
-        [
-            'name'  => 'Voting',
-            'data'  => [43934, 52503, 57177, 69658],
-            // 'color' => '#0c2959',
-        ],
-    ];
-
     $chart1 = \Chart::title([
         'text' => 'Voting ballon d`or 2018',
     ])
@@ -67,10 +53,10 @@ $legend = [
     ])
     ->xaxis([
         'categories' => [
-            'Messi',
-            'CR7',
+            'Alex Turner',
+            'Julian Casablancas',
             'Bambang Pamungkas',
-            'Del Piero',
+            'Mbah Surip',
         ],
         'labels'     => [
             'rotation'  => 15,
@@ -87,7 +73,15 @@ $legend = [
         'align'         => 'right',
         'verticalAlign' => 'middle',
     ])
-    ->series($series)
+    ->series(
+        [
+            [
+                'name'  => 'Voting',
+                'data'  => [43934, 52503, 57177, 69658],
+                // 'color' => '#0c2959',
+            ],
+        ]
+    )
     ->display();
 
     return view('welcome', [
