@@ -75,7 +75,8 @@ $legend = [
         'labels'     => [
             'rotation'  => 15,
             'align'     => 'top',
-            'formatter' => 'startJs:function(){return this.value + " (Footbal Player)"}:endJs', // use 'startJs:yourjavasscripthere:endJs'
+            'formatter' => 'startJs:function(){return this.value + " (Footbal Player)"}:endJs', 
+            // use 'startJs:yourjavasscripthere:endJs'
         ],
     ])
     ->yaxis([

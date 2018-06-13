@@ -3,7 +3,7 @@
     "description": "Laravel Highcarts Packages",
     "type": "library",
     "license": "MIT",
-    "keywords" : ["laravel" , "highcharts"],
+    "keywords" : ["laravel" , "highcharts","packages"],
     "authors": [
         {
             "name": "Muhamad Reza Abdul Rohim",
