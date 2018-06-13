@@ -102,7 +102,7 @@ In Blade
 ```
 Output :
 
-![alt tag](https://preview.ibb.co/cz8SqJ/chart1.png)
+![alt tag](https://preview.ibb.co/mKrfSy/chart2.png)
 
 
 the package will generate this code in yout view : 
