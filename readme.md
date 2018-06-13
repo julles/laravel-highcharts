@@ -3,7 +3,7 @@
 [![Total Downloads](https://poser.pugx.org/muhamadrezaar/highcharts/d/total.svg)](https://packagist.org/packages/muhamadrezaar/highcharts)
 [![Latest Stable Version](https://poser.pugx.org/muhamadrezaar/highcharts/v/stable.svg)](https://packagist.org/packages/muhamadrezaar/highcharts/v/stable.svg)
 [![License](https://poser.pugx.org/muhamadrezaar/highcharts/license.svg)](https://packagist.org/packages/muhamadrezaar/highcharts)
-
+[![License](https://img.shields.io/github/release/julles/laravel-highcharts.svg?style=flat-square)](https://github.com/julles/laravel-highcharts/releases)
 
 Package Highcharts for Laravel 5
 
