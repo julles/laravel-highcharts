@@ -12,7 +12,7 @@ Package Highcharts for Laravel 5
 Add Package to composer.json
 
 ```sh
-composer require muhamadrezaar/highcharts
+composer require muhamadrezaar/highcharts:dev-master
 ```
 In Laravel 5.5 the service provider will automatically get registered. In older versions of the framework just add the service provider and facade in config/app.php file:
 
