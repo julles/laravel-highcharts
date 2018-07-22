@@ -1,4 +1,6 @@
-<?php namespace RezaAr\Highcharts\Classes\Presenters;
+<?php
+
+namespace RezaAr\Highcharts\Classes\Presenters;
 
 class InitJsPresenter
 {
@@ -16,14 +18,14 @@ class InitJsPresenter
 
     public function init_js()
     {
-        $init = "";
+        $init = '';
 
         if ($this->highchart == true) {
             $this->highchart = '<script src="//code.highcharts.com/highcharts.js"></script>';
         }
 
         if ($this->seriesLabel == true) {
-                $this->seriesLabel = '<script src="//code.highcharts.com/modules/series-label.js"></script>';
+            $this->seriesLabel = '<script src="//code.highcharts.com/modules/series-label.js"></script>';
         }
 
         if ($this->exporting == true) {
@@ -34,21 +36,21 @@ class InitJsPresenter
             $this->exportData = '<script src="https://code.highcharts.com/modules/export-data.js"></script>';
         }
 
-        if($this->init !== false){
-            $init =  $this->highchart .
-                $this->seriesLabel .
-                $this->exporting .
+        if ($this->init !== false) {
+            $init = $this->highchart.
+                $this->seriesLabel.
+                $this->exporting.
                 $this->exportData;
         }
-        
-        return $init;
 
+        return $init;
     }
 
     public function generate()
     {
-        $generate       = $this->init_js();
+        $generate = $this->init_js();
         $this->generate = null;
+
         return $generate;
     }
 }
