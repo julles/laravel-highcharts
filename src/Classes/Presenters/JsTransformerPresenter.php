@@ -1,30 +1,32 @@
-<?php namespace RezaAr\Highcharts\Classes\Presenters;
+<?php
+
+namespace RezaAr\Highcharts\Classes\Presenters;
 
 class JsTransformerPresenter
 {
-    public $title       = [];
-    public $subtitle    = [];
-    public $transform   = [];
-    public $yAxis       = [];
-    public $xAxis       = [];
-    public $legend      = [];
+    public $title = [];
+    public $subtitle = [];
+    public $transform = [];
+    public $yAxis = [];
+    public $xAxis = [];
+    public $legend = [];
     public $plotOptions = [];
-    public $series      = [];
-    public $chart       = [];
-    public $colors      = [];
-    public $credits     = 'false';
-    public $container   = 'container';
+    public $series = [];
+    public $chart = [];
+    public $colors = [];
+    public $credits = 'false';
+    public $container = 'container';
 
     public function __contruct()
     {
-        $this->transform = "";
+        $this->transform = '';
     }
 
     public function encode_title()
     {
         $data = $this->title;
 
-        $this->title = !empty($data) ? 'title: ' . json_encode($data) . ',' : null;
+        $this->title = !empty($data) ? 'title: '.json_encode($data).',' : null;
 
         return $this;
     }
@@ -33,7 +35,7 @@ class JsTransformerPresenter
     {
         $data = $this->subtitle;
 
-        $this->subtitle = !empty($data) ? 'subtitle: ' . json_encode($data) . ',' : null;
+        $this->subtitle = !empty($data) ? 'subtitle: '.json_encode($data).',' : null;
 
         return $this;
     }
@@ -42,15 +44,15 @@ class JsTransformerPresenter
     {
         $data = $this->yAxis;
 
-        $this->yAxis = !empty($data) ? 'yAxis: ' . json_encode($data) . ',' : null;
+        $this->yAxis = !empty($data) ? 'yAxis: '.json_encode($data).',' : null;
 
         return $this;
     }
 
     public function encode_x_axis()
     {
-        $data        = $this->xAxis;
-        $this->xAxis = !empty($data) ? 'xAxis: ' . json_encode($data) . ',' : null;
+        $data = $this->xAxis;
+        $this->xAxis = !empty($data) ? 'xAxis: '.json_encode($data).',' : null;
 
         return $this;
     }
@@ -59,7 +61,7 @@ class JsTransformerPresenter
     {
         $data = $this->legend;
 
-        $this->legend = !empty($data) ? 'legend: ' . json_encode($data) . ',' : null;
+        $this->legend = !empty($data) ? 'legend: '.json_encode($data).',' : null;
 
         return $this;
     }
@@ -68,7 +70,7 @@ class JsTransformerPresenter
     {
         $data = $this->plotOptions;
 
-        $this->plotOptions = !empty($data) ? 'plotOptions: ' . json_encode($data) . ',' : null;
+        $this->plotOptions = !empty($data) ? 'plotOptions: '.json_encode($data).',' : null;
 
         return $this;
     }
@@ -77,7 +79,7 @@ class JsTransformerPresenter
     {
         $data = $this->series;
 
-        $this->series = !empty($data) ? 'series: ' . json_encode($data) . ',' : null;
+        $this->series = !empty($data) ? 'series: '.json_encode($data).',' : null;
 
         return $this;
     }
@@ -86,21 +88,21 @@ class JsTransformerPresenter
     {
         $data = $this->chart;
 
-        $this->chart = !empty($data) ? 'chart: ' . json_encode($data) . ',' : null;
+        $this->chart = !empty($data) ? 'chart: '.json_encode($data).',' : null;
 
         return $this;
     }
 
     public function encode_colors()
     {
-        $data        = $this->colors;
-        $this->colors = !empty($data) ? 'colors: ' . json_encode($data) . ',' : null;
+        $data = $this->colors;
+        $this->colors = !empty($data) ? 'colors: '.json_encode($data).',' : null;
+
         return $this;
     }
 
     public function credits()
     {
-
         $this->credits = 'credits:false,';
 
         return $this;
@@ -134,24 +136,23 @@ class JsTransformerPresenter
         $this->encode_colors();
         $this->credits();
 
-        $allString = $this->title .
-        $this->subtitle .
-        $this->yAxis .
-        $this->xAxis .
-        $this->legend .
-        $this->plotOptions .
-        $this->series .
-        $this->chart .
-        $this->colors .
+        $allString = $this->title.
+        $this->subtitle.
+        $this->yAxis.
+        $this->xAxis.
+        $this->legend.
+        $this->plotOptions.
+        $this->series.
+        $this->chart.
+        $this->colors.
         $this->credits;
 
         $allString = substr($allString, 0, -1);
         $allString = $this->replacer($allString);
-        $generate  = '<script type="text/javascript">';
-        $generate .= 'Highcharts.chart({' . $allString . '});';
+        $generate = '<script type="text/javascript">';
+        $generate .= 'Highcharts.chart({'.$allString.'});';
         $generate .= '</script>';
 
         return $generate;
-
     }
 }
