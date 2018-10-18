@@ -14,7 +14,7 @@ class JsTransformerPresenter
     public $series = [];
     public $chart = [];
     public $colors = [];
-    public $credits = 'false';
+    public $credits = [];
     public $container = 'container';
 
     public function __contruct()
@@ -26,7 +26,7 @@ class JsTransformerPresenter
     {
         $data = $this->title;
 
-        $this->title = !empty($data) ? 'title: '.json_encode($data).',' : null;
+        $this->title = !empty($data) ? 'title: '.json_encode($data, JSON_UNESCAPED_UNICODE).',' : null;
 
         return $this;
     }
@@ -35,7 +35,7 @@ class JsTransformerPresenter
     {
         $data = $this->subtitle;
 
-        $this->subtitle = !empty($data) ? 'subtitle: '.json_encode($data).',' : null;
+        $this->subtitle = !empty($data) ? 'subtitle: '.json_encode($data, JSON_UNESCAPED_UNICODE).',' : null;
 
         return $this;
     }
@@ -61,7 +61,7 @@ class JsTransformerPresenter
     {
         $data = $this->legend;
 
-        $this->legend = !empty($data) ? 'legend: '.json_encode($data).',' : null;
+        $this->legend = !empty($data) ? 'legend: '.json_encode($data, JSON_UNESCAPED_UNICODE).',' : null;
 
         return $this;
     }
@@ -79,7 +79,7 @@ class JsTransformerPresenter
     {
         $data = $this->series;
 
-        $this->series = !empty($data) ? 'series: '.json_encode($data).',' : null;
+        $this->series = !empty($data) ? 'series: '.json_encode($data, JSON_UNESCAPED_UNICODE).',' : null;
 
         return $this;
     }
@@ -88,7 +88,7 @@ class JsTransformerPresenter
     {
         $data = $this->chart;
 
-        $this->chart = !empty($data) ? 'chart: '.json_encode($data).',' : null;
+        $this->chart = !empty($data) ? 'chart: '.json_encode($data, JSON_UNESCAPED_UNICODE).',' : null;
 
         return $this;
     }
@@ -103,7 +103,8 @@ class JsTransformerPresenter
 
     public function credits()
     {
-        $this->credits = 'credits:false,';
+        $data = $this->credits;
+        $this->credits = !empty($data)? 'credits: '.json_encode($data, JSON_UNESCAPED_UNICODE).',' : null;
 
         return $this;
     }
