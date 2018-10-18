@@ -130,6 +130,7 @@ class ChartPresenter
     public function credits($credits = [])
     {
         $this->transform->credits = $credits;
+
         return $this;
     }
 

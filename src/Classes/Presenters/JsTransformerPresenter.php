@@ -104,7 +104,7 @@ class JsTransformerPresenter
     public function credits()
     {
         $data = $this->credits;
-        $this->credits = !empty($data)? 'credits: '.json_encode($data, JSON_UNESCAPED_UNICODE).',' : null;
+        $this->credits = !empty($data) ? 'credits: '.json_encode($data, JSON_UNESCAPED_UNICODE).',' : null;
 
         return $this;
     }
