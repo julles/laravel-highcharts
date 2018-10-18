@@ -127,9 +127,9 @@ class ChartPresenter
         return $this;
     }
 
-    public function credits($credits = 'false')
+    public function credits($credits = [])
     {
-        // $this->transform->credits = $credits;
+        $this->transform->credits = $credits;
         return $this;
     }
 
