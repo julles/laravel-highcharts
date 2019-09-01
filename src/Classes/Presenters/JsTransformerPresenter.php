@@ -12,6 +12,7 @@ class JsTransformerPresenter
     public $legend = [];
     public $plotOptions = [];
     public $series = [];
+    public $tooltip = [];
     public $chart = [];
     public $colors = [];
     public $credits = [];
@@ -75,6 +76,15 @@ class JsTransformerPresenter
         return $this;
     }
 
+    public function encode_tooltip()
+    {
+        $data = $this->tooltip;
+
+        $this->tooltip = !empty($data) ? 'tooltip: '.json_encode($data).',' : null;
+
+        return $this;
+    }
+
     public function encode_series()
     {
         $data = $this->series;
@@ -132,6 +142,7 @@ class JsTransformerPresenter
         $this->encode_x_axis();
         $this->encode_legend();
         $this->encode_plot_options();
+        $this->encode_tooltip();
         $this->encode_series();
         $this->encode_chart();
         $this->encode_colors();
@@ -143,6 +154,7 @@ class JsTransformerPresenter
         $this->xAxis.
         $this->legend.
         $this->plotOptions.
+        $this->tooltip.
         $this->series.
         $this->chart.
         $this->colors.

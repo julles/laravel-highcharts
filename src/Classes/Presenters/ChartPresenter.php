@@ -106,6 +106,13 @@ class ChartPresenter
         return $this;
     }
 
+    public function tooltip($tooltip = [])
+    {
+        $this->transform->tooltip = $tooltip;
+
+        return $this;
+    }
+
     public function series($series = [])
     {
         $this->transform->series = $series;
