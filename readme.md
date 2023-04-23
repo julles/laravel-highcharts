@@ -155,3 +155,6 @@ cdn highcharts.js and others js only generated one time
 
 https://reza.mit-license.org/
 
+Buy me a cup of coffee
+https://trakteer.id/mreza.id
+
